@@ -4,13 +4,14 @@ class Book:
         self.title = title
         self.author = author
         self.isbn = isbn
-        self.available_copies = 200
+        self.available_copies = available_copies
     
     # Methods
     def borrow(self):
         if self.available_copies > 0:
             self.available_copies -= 1
             print("You just borrowed a book!")
+            print(f"There are {self.available_copies} copies left!")
         else:
             print("There are not enough available copies.")
     
@@ -80,3 +81,8 @@ class Library:
         print("Registered members in the library:")
         for member in self.members:
             print(f"Name: {member.name}, ID: {member.member_id}")
+            
+
+book = Book('Corporate Finance', 'Allama Iqbal', 824789097182, 200)
+
+book.borrow()
